@@ -17,8 +17,4 @@ f = open("data/{}{}{}_{}{}{}.bin".format(start_time.year, start_time.month,start
 f.write(a)
 f.close()
 
-
-# print("{:02x} ".format(ord(ser.read(1))), end='')
-
-
 ser.close()

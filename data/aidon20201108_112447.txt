@@ -1,0 +1,178 @@
+            Header (based on ISO/IEC 13239:2002):
+7e          <-- frame start flag, see 4.1
+a           <-- frame format type 3, see 4.9
+243         <-- length of message excluding opening and closing flag
+41          <-- destination address, see H.4, length is based on lsb = 1 in last byte of octet string, see 4.7.1
+0883        <-- source address, see H.4, length is based on lsb = 1 in last byte of octet string, see 4.7.1
+13          <-- unnumbered information transfer, see 5.3
+85 eb       <-- header check sequence (HCS) field, CRC-16/X-25, note byte order is swapped
+
+            LLC (Useful info the Blue Book, BB and Green Book, from DLMS/COSEM)
+e6          <-- Destination LSAP, see GB 8.3.2 
+e7          <-- Source LSAP, see GB 8.3.2 
+00          <-- LLC Quality, always 00, see GB 8.3.2
+            APDU
+0f          <-- tag for data notification
+40 00 00 00 <-- long-invoke-id-and-priority
+00          <-- date-time, a value > 0 specify length of datetime octet-string following this byte
+            Notification body
+01 1b 
+02 02 
+    09 06 00 00 01 00 00 ff 
+    09 0c 07 e4 0b 08 00 09 25 28 ff 80 00 ff 
+02 03 
+    09 06 01 00 01 07 00 ff 
+    06 00 00 03 84 
+    02 02 
+        0f 00 
+        16 1b 
+02 03 
+    09 06 01 00 02 07 00 ff 
+    06 00 00 00 00 
+    02 02 0f 00 16 1b 
+02 03 
+    09 06 01 00 03 07 00 ff 
+    06 00 00 00 00 
+    02 02 
+        0f 00 
+        16 1d 
+02 03 
+    09 06 01 00 04 07 00 ff 
+    06 00 00 03 34 
+    02 02 
+        0f 00 
+        16 1d 
+02 03 
+    09 06 01 00 1f 07 00 ff 
+    10 00 0e 
+    02 02 
+        0f ff 
+        16 21 
+02 03 
+    09 06 01 00 33 07 00 ff 
+    10 00 15 
+    02 02 
+        0f ff 
+        16 21 
+02 03 
+    09 06 01 00 47 07 00 ff 
+    10 00 11 
+    02 02 
+        0f ff 
+        16 21 
+02 03 
+    09 06 01 00 20 07 00 ff 
+    12 09 1f 
+    02 02 
+        0f ff 
+        16 23 
+02 03 
+    09 06 01 00 34 07 00 ff 
+    12 09 2a 
+    02 02 
+        0f ff 
+        16 23 
+02 03 
+    09 06 01 00 48 07 00 ff 
+    12 09 29 
+    02 02 
+        0f ff 
+        16 23 
+02 03 
+    09 06 01 00 15 07 00 ff 
+    06 00 00 00 d5 
+    02 02 
+        0f 00 
+        16 1b 
+02 03 
+    09 06 01 00 16 07 00 ff 
+    06 00 00 00 00 
+    02 02 
+        0f 00 
+        16 1b 
+02 03 
+    09 06 01 00 17 07 00 ff 
+    06 00 00 00 00 
+    02 02 
+        0f 00 
+        16 1d 
+02 03 
+    09 06 01 00 18 07 00 ff 
+    06 00 00 00 fa 
+    02 02 
+        0f 00 
+        16 1d 
+02 03 
+    09 06 01 00 29 07 00 ff 
+    06 00 00 01 be 
+    02 02 
+        0f 00 
+        16 1b 
+02 03 
+    09 06 01 00 2a 07 00 ff 
+    06 00 00 00 00 
+    02 02 
+        0f 00 
+        16 1b 
+02 03 
+    09 06 01 00 2b 07 00 ff 
+    06 00 00 00 00 
+    02 02 
+        0f 00 
+        16 1d 
+02 03 
+    09 06 01 00 2c 07 00 ff 
+    06 00 00 00 e4 
+    02 02 
+        0f 00 
+        16 1d 
+02 03 
+    09 06 01 00 3d 07 00 ff 
+    06 00 00 00 ef 
+    02 02 
+        0f 00 
+        16 1b 
+02 03 
+    09 06 01 00 3e 07 00 ff 
+    06 00 00 00 00 
+    02 02 
+        0f 00 
+        16 1b 
+02 03 
+    09 06 01 00 3f 07 00 ff 
+    06 00 00 00 00 
+    02 02 
+        0f 00 
+        16 1d 
+02 03 
+    09 06 01 00 40 07 00 ff 
+    06 00 00 01 54 
+    02 02 
+        0f 00 
+        16 1d 
+02 03 
+    09 06 01 00 01 08 00 ff 
+    06 00 03 27 87 
+    02 02 
+        0f 00 
+        16 1e 
+02 03 
+    09 06 01 00 02 08 00 ff 
+    06 00 00 00 00 
+    02 02 
+        0f 00 
+        16 1e 
+02 03 
+    09 06 01 00 03 08 00 ff 
+    06 00 00 00 0b 
+    02 02 
+        0f 00 
+        16 20 
+02 03 
+    09 06 01 00 04 08 00 ff 
+    06 00 01 00 35 
+    02 02 
+        0f 00 
+        16 20 
+bc b2 
+7e
