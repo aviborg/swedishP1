@@ -12,4 +12,8 @@ Pins 1 and 2 on the RJ12 are shorted to have data request set to 5 V constantly.
 
 When all this in place you should be able to run the serial read python program.
 
+To read the binary file in you may use ''xxd filename.bin''
+
+The next thing is to decode and parse the binary stream.
+
 
